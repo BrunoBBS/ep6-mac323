@@ -2,6 +2,11 @@ import edu.princeton.cs.algs4.*;
 import java.util.*;
 
 public class Deque<Item> implements Iterable<Item>{
+    //For a colorful unit testing
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
     Node first, last;
     public static int nodeNumber;
 
@@ -90,27 +95,26 @@ public class Deque<Item> implements Iterable<Item>{
 
     public static void main(String[] args) {
         Deque<Integer> d = new Deque<Integer>();
-        StdOut.print("The newly created Deque must be empty...");
-        if (d.isEmpty()) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.print("The number of items in it must be 0...");
-        if (d.size() == 0)StdOut.println("OK");
-        else StdOut.println("FAILED!");
+        StdOut.print("The newly created Deque must be empty................");
+        if (d.isEmpty()) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
+        StdOut.print("The number of items in it must be 0..................");
+        if (d.size() == 0)StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
         d.addFirst(1);
         d.addLast(5);
-        StdOut.print("Now the Deque must have two items...");
-        if (!d.isEmpty() && d.size() == 2) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.print("Testing if the removeFirst returns correctly...");
-        if (d.removeFirst() == 1) StdOut.println("OK");
-        else StdOut.println("FAILED!");
+        StdOut.print("Now the Deque must have two items....................");
+        if (!d.isEmpty() && d.size() == 2) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
+        StdOut.print("Testing if the removeFirst returns correctly.........");
+        if (d.removeFirst() == 1) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
         StdOut.print("Testing if the removeFirst returns correctly again...");
-        if (d.removeFirst() == 5) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.print("Now the number of items in it must be 0...");
-        if (d.size() == 0 && d.isEmpty())StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.println("Inserting 6 items first and 6 items last:");
+        if (d.removeFirst() == 5) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
+        StdOut.print("Now the number of items in it must be 0..............");
+        if (d.size() == 0 && d.isEmpty())StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
         d.addFirst(6);
         d.addLast(7);
         d.addFirst(5);
@@ -123,24 +127,22 @@ public class Deque<Item> implements Iterable<Item>{
         d.addLast(11);
         d.addFirst(1);
         d.addLast(12);
-        StdOut.print("Now the Deque should have 12 items...");
-        if (!d.isEmpty() && d.size() == 12) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.println("Testing the iterator:");
+        StdOut.print("Now the Deque should have 12 items...................");
+        if (!d.isEmpty() && d.size() == 12) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
         int count = 0;
         for (Integer item : d) {
-            StdOut.println(item);
             count++;
         }
-        StdOut.print("Iterator test...");
-        if (count == 12) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.print("Testing removeLast...");
-        if (d.removeLast() == 12) StdOut.println("OK");
-        else StdOut.println("FAILED!");
-        StdOut.print("Testing removeLast again...");
-        if (d.removeLast() == 11) StdOut.println("OK");
-        else StdOut.println("FAILED!");
+        StdOut.print("Iterator test........................................");
+        if (count == 12) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
+        StdOut.print("Testing removeLast...................................");
+        if (d.removeLast() == 12) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
+        StdOut.print("Testing removeLast again.............................");
+        if (d.removeLast() == 11) StdOut.println(ANSI_GREEN + "OK" + ANSI_RESET);
+        else StdOut.println(ANSI_RED + "FAILED!" + ANSI_RESET);
 
     }
 
