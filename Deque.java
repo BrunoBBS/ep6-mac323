@@ -58,7 +58,6 @@ public class Deque<Item> implements Iterable<Item>{
         last = last.prev;
         last.next = null;
         return ret;
-
     }
 
     public Iterator<Item> iterator() {
@@ -68,15 +67,14 @@ public class Deque<Item> implements Iterable<Item>{
     private class DequeIterator implements Iterator<Item>{
         Node cursor = first;
         public boolean hasNext() {
-            return cursor.next != null;
+            return cursor != null && cursor.next != null;
         }
-
         public Item next() {
+            if (cursor == null) throw new NoSuchElementException("There is no next element.");
             Node tmp =  cursor;
             cursor = cursor.next;
             return tmp.val;
         }
-
         public void remove() {
             throw new UnsupportedOperationException();
         }
